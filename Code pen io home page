@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodePen Landing Page</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="Styless.css">
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://blog.codepen.io/wp-content/uploads/2012/06/codepen-wordmark-display-inside-white@10x.png" alt="CodePen Logo" />
+    </div>
+    <nav class="nav-links">
+      <a href="#">Pens <span>▼</span></a>
+      <a href="#">Projects <span>▼</span></a>
+      <a href="#">Posts <span>▼</span></a>
+      <a href="#">Collections <span>▼</span></a>
+      <a href="#">Spark <span>▼</span></a>
+    </nav>
+  </header>
+
+ 
+  <section class="hero">
+    <div class="hero-text">
+      <h1>CodePen is a <strong>social development environment</strong> for front-end designers and developers.</h1>
+      <p>Build and deploy a website, show off your work, build test cases, and find inspiration.</p>
+      <div class="hero-buttons">
+        <button class="btn-dark">Sign Up for Free</button>
+        <button class="btn-light">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://cpwebassets.codepen.io/assets/packs/codepen-home-hero-b1ffb8c7291904020e6f.png" alt="CodePen Illustration"/>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodePen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1f26;
+      color: #ffffff;
+    }
+    header {
+      background-color: #0d0d0d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 30px;
+      margin-right: 10px;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    nav span {
+      cursor: pointer;
+    }
+    .main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+    }
+    .left {
+      max-width: 500px;
+    }
+    .left h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .left p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .left button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .signup {
+      background-color: #47cf73;
+      color: #000;
+    }
+    .learnmore {
+      background-color: #2b2b2b;
+      color: white;
+    }
+    .right img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      display: flex;
+      justify-content: space-around;
+      background-color: #121212;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+    footer div {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="image/codepen-wordmark-white.png" alt="CodePen Logo" />
+    </div>
+    <nav>
+      <span>Pens</span>
+      <span>Projects</span>
+      <span>Posts</span>
+      <span>Collections</span>
+      <span>Spark &#9662;</span>
+      <button>Log In</button>
+      <button>Sign Up</button>
+    </nav>
+  </header>
+
+  <div class="main">
+    <div class="left">
+      <h1>CodePen is a <strong>social development environment</strong> for front-end designers and developers. <span>&#128075;</span></h1>
+      <p>It’s the best place to build and deploy a website, show off your work, build test cases, and find inspiration.</p>
+      <button class="signup">Sign Up for Free</button>
+      <button class="learnmore">Learn More</button>
+    </div>
+    <div class="right">
+      <img src="image/codepen-example.png" alt="CodePen Project Preview" />
+    </div>
+  </div>
+
+  <footer>
+    <div>CodePen for <strong>TEAMS</strong></div>
+    <div>CodePen for <strong>EDUCATION</strong></div>
+    <div>CodePen for <strong>PRIVACY</strong></div>
+    <div>CodePen for <strong>WRITING</strong></div>
+  </footer>
+</body>
+</html>
