@@ -3,114 +3,250 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodePen</title>
+  <title>CodePen Clone</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #1e1f26;
-      color: #ffffff;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
+    
     header {
-      background-color: #0d0d0d;
+      background-color: #111;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 12px 24px;
     }
+
     .logo {
       display: flex;
       align-items: center;
     }
+
     .logo img {
-      height: 30px;
-      margin-right: 10px;
+      height: 24px;
     }
-    nav {
+
+    .nav-left {
       display: flex;
-      gap: 20px;
-      align-items: center;
+      flex-direction: column;
+      gap: 4px;
     }
-    nav span {
+
+    .explore-label {
+      color: #fcd000;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .nav-links span {
+      cursor: pointer;
+      color: white;
+    }
+
+    .spark-dropdown {
+      position: relative;
+      padding: 6px 10px;
+      background-color: #2b2b2b;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .spark-dropdown::after {
+      content: "▼";
+      font-size: 0.6rem;
+      margin-left: 6px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-right button {
+      background-color: #1f1f1f;
+      color: white;
+      border: 1px solid #555;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.9rem;
       cursor: pointer;
     }
+
+    .create {
+      background-color: #2c2c2c;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+
+    .search-icon {
+      font-size: 1.2rem;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    
     .main {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 40px;
+      padding: 60px 40px;
+      flex: 1;
     }
+
     .left {
       max-width: 500px;
     }
+
     .left h1 {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      font-weight: 500;
     }
+
     .left p {
       font-size: 1.1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 30px;
+      color: #ccc;
     }
-    .left button {
-      margin-right: 10px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
+
+    .buttons {
+      display: flex;
+      gap: 12px;
     }
+
     .signup {
       background-color: #47cf73;
-      color: #000;
+      color: black;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
+
     .learnmore {
-      background-color: #2b2b2b;
+      background-color: black;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .right {
+      max-width: 500px;
+    }
+
+    .right p {
+      color: #00bfff;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .right span {
       color: white;
     }
+
     .right img {
-      max-width: 100%;
+      width: 100%;
       border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
+
+    
     footer {
       display: flex;
-      justify-content: space-around;
-      background-color: #121212;
-      padding: 20px;
+      background-color: #2b2b2b;
+      border-top: 1px solid #444;
+    }
+
+    footer div {
+      flex: 1;
+      text-align: center;
+      padding: 16px;
+      border-right: 1px solid #444;
       font-size: 0.9rem;
     }
-    footer div {
-      text-align: center;
+
+    footer div:last-child {
+      border-right: none;
     }
   </style>
 </head>
 <body>
+  
   <header>
+    
     <div class="logo">
       <img src="image/codepen-wordmark-white.png" alt="CodePen Logo" />
     </div>
-    <nav>
-      <span>Pens</span>
-      <span>Projects</span>
-      <span>Posts</span>
-      <span>Collections</span>
-      <span>Spark &#9662;</span>
+
+    
+    <div class="nav-left">
+      <div class="explore-label">Explore</div>
+      <div class="nav-links">
+        <span>Pens</span>
+        <span>Projects</span>
+        <span>Posts</span>
+        <span>Collections</span>
+        <span class="spark-dropdown">Spark</span>
+      </div>
+    </div>
+
+    
+    <div class="nav-right">
+      <button class="create">Create ▼</button>
+      <div class="search-icon">🔍</div>
       <button>Log In</button>
       <button>Sign Up</button>
-    </nav>
+    </div>
   </header>
 
+  
   <div class="main">
     <div class="left">
-      <h1>CodePen is a <strong>social development environment</strong> for front-end designers and developers. <span>&#128075;</span></h1>
-      <p>It’s the best place to build and deploy a website, show off your work, build test cases, and find inspiration.</p>
-      <button class="signup">Sign Up for Free</button>
-      <button class="learnmore">Learn More</button>
+      <h1>
+        CodePen is a <strong>social development environment</strong> for front-end designers and developers. 👋
+      </h1>
+      <p>
+        It’s the best place to build and deploy a website, show off your work, build test cases, and find inspiration.
+      </p>
+      <div class="buttons">
+        <button class="signup">Sign Up for Free</button>
+        <button class="learnmore">Learn More</button>
+      </div>
     </div>
     <div class="right">
-      <img src="image/codepen-example.png" alt="CodePen Project Preview" />
+      <p>This is <span>CodePen Projects!</span></p>
+      <img src="image/Preview Image.png" alt="CodePen Project Preview" />
     </div>
   </div>
 
+  
   <footer>
     <div>CodePen for <strong>TEAMS</strong></div>
     <div>CodePen for <strong>EDUCATION</strong></div>
