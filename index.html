@@ -20,7 +20,6 @@
       min-height: 100vh;
     }
 
-    
     header {
       background-color: #111;
       display: flex;
@@ -54,28 +53,42 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 16px;
       font-weight: bold;
       font-size: 0.95rem;
     }
 
-    .nav-links span {
-      cursor: pointer;
-      color: white;
+    .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: default;
     }
 
-    .spark-dropdown {
-      position: relative;
-      padding: 6px 10px;
-      background-color: #2b2b2b;
-      border-radius: 4px;
-      font-size: 0.85rem;
+
+    .nav-links a.spark-dropdown {
+  color: #bbb !important;
+  font-weight: normal !important;
+  position: relative;
+  display: inline-block;
+  padding-right: 12px; 
+  text-decoration: none;
+  font-size: 0.9rem;
     }
 
-    .spark-dropdown::after {
-      content: "▼";
-      font-size: 0.6rem;
-      margin-left: 6px;
+    .spark-text {
+  position: relative;
+  z-index: 1;
+    }
+
+    .spark-arrow {
+  position: absolute;
+  top: -85%;
+  margin-left: 7px; 
+  font-size: 1.5rem;    
+  color: #bbb;        
+  pointer-events: none;
     }
 
     .nav-right {
@@ -91,7 +104,7 @@
       padding: 6px 14px;
       border-radius: 4px;
       font-size: 0.9rem;
-      cursor: pointer;
+      cursor: default;
     }
 
     .create {
@@ -104,10 +117,8 @@
     .search-icon {
       font-size: 1.2rem;
       padding: 4px;
-      cursor: pointer;
     }
 
-    
     .main {
       display: flex;
       justify-content: space-between;
@@ -124,7 +135,7 @@
       font-size: 2rem;
       line-height: 1.5;
       margin-bottom: 20px;
-      font-weight: 500;
+      font-weight: 300; 
     }
 
     .left p {
@@ -177,60 +188,45 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
 
-    
-    footer {
-      display: flex;
-      background-color: #2b2b2b;
-      border-top: 1px solid #444;
-    }
-
-    footer div {
-      flex: 1;
-      text-align: center;
-      padding: 16px;
-      border-right: 1px solid #444;
-      font-size: 0.9rem;
-    }
-
-    footer div:last-child {
-      border-right: none;
+    .extra-bold {
+      font-weight: 800;
     }
   </style>
 </head>
 <body>
-  
+
   <header>
-    
-    <div class="logo">
-      <img src="image/codepen-wordmark-white.png" alt="CodePen Logo" />
-    </div>
+     <div class="logo">
+    <img src="image/codepen-wordmark-white.png" alt="CodePen Logo" />
+  </div>
 
-    
-    <div class="nav-left">
-      <div class="explore-label">Explore</div>
-      <div class="nav-links">
-        <span>Pens</span>
-        <span>Projects</span>
-        <span>Posts</span>
-        <span>Collections</span>
-        <span class="spark-dropdown">Spark</span>
-      </div>
+  <div class="nav-left">
+    <div class="explore-label">Explore</div>
+    <div class="nav-links">
+      <a href="#">Pens</a>
+      <a href="#">Projects</a>
+      <a href="#">Posts</a>
+      <a href="#">Collections</a>
+      <a href="#" class="spark-dropdown">
+        <span class="spark-wrapper"></span>
+        <span class="spark-text">Spark</span>
+        <span class="spark-arrow">⌄</span>
+      </a>
     </div>
+  </div>
 
-    
     <div class="nav-right">
-      <button class="create">Create ▼</button>
+      <button class="create">Create <span style="color:#47cf73;">⏷</span></button>
       <div class="search-icon">🔍</div>
       <button>Log In</button>
       <button>Sign Up</button>
     </div>
   </header>
 
-  
   <div class="main">
     <div class="left">
       <h1>
-        CodePen is a <strong>social development environment</strong> for front-end designers and developers. 👋
+        CodePen is a <strong class="extra-bold">social development environment</strong> for front-end designers and developers. 👋
       </h1>
       <p>
         It’s the best place to build and deploy a website, show off your work, build test cases, and find inspiration.
@@ -240,18 +236,103 @@
         <button class="learnmore">Learn More</button>
       </div>
     </div>
+
     <div class="right">
-      <p>This is <span>CodePen Projects!</span></p>
+     <p>
+  <span>This is</span> 
+  <span style="color:#00bfff;">CodePen Projects</span><span style="color:white;">!</span>
+</p>
+
+
+
       <img src="image/Preview Image.png" alt="CodePen Project Preview" />
     </div>
   </div>
 
   
-  <footer>
-    <div>CodePen for <strong>TEAMS</strong></div>
-    <div>CodePen for <strong>EDUCATION</strong></div>
-    <div>CodePen for <strong>PRIVACY</strong></div>
-    <div>CodePen for <strong>WRITING</strong></div>
-  </footer>
+  <footer style="
+  display: flex;
+  background: linear-gradient(to bottom, #3b3f46, #2c2f36);
+  border-top: 1px solid #444;
+  border-bottom: 8px solid #1e1f26;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+">
+  <div style="
+    flex: 1;
+    padding: 16px;
+    border-right: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #ccc;
+  ">
+    CodePen for <strong style="
+      color: white;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding-left: 6px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    ">TEAMS</strong>
+  </div>
+  <div style="
+    flex: 1;
+    padding: 16px;
+    border-right: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #ccc;
+  ">
+    CodePen for <strong style="
+      color: white;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding-left: 6px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    ">EDUCATION</strong>
+  </div>
+  <div style="
+    flex: 1;
+    padding: 16px;
+    border-right: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #ccc;
+  ">
+    CodePen for <strong style="
+      color: white;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding-left: 6px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    ">PRIVACY</strong>
+  </div>
+  <div style="
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #ccc;
+  ">
+    CodePen for <strong style="
+      color: white;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding-left: 6px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    ">WRITING</strong>
+  </div>
+</footer>
+
 </body>
 </html>
